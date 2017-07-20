@@ -10,9 +10,8 @@ public class Player {
     public Player(String name, int startingNumShips) {
         this.name = name;
         this.numShips = startingNumShips;
-        boards[0].setBoardType('A');
-        boards[1].setBoardType('D');
         createShips();
+        assignBoardTypes();
     }
 
     private void createShips() {
@@ -20,5 +19,10 @@ public class Player {
         for (int i = 0; i < numShips; i++) {
             ships[i] = new Ship(i + 1);
         }
+    }
+
+    private void assignBoardTypes() {
+        boards[0] = new GameBoard('A');
+        boards[1] = new GameBoard('D');
     }
 }

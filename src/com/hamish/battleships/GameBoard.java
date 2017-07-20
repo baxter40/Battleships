@@ -9,6 +9,9 @@ public class GameBoard {
         return board;
     }
 
+    public GameBoard(char boardType) {
+        this.boardType = boardType;
+    }
     public void setPosition(char character, int row, int column) {
         board[row][column] = character;
     }
@@ -19,10 +22,6 @@ public class GameBoard {
 
     public char getBoardType() {
         return boardType;
-    }
-
-    public void setBoardType(char boardType) {
-        this.boardType = boardType;
     }
 
     public void placeShips() {
