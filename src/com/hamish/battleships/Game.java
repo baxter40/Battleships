@@ -4,12 +4,10 @@ import java.util.Scanner;
 
 public class Game {
 
-    private final char HIT = 'H';
-    private final char MISS = 'M';
-    private final char SHIP = '*';
-    private final int STARTING_NUM_SHIPS = 5;
-
-    private enum boardNumbers {Attack, Defence}
+    private final static char HIT = 'H';
+    private final static char MISS = 'M';
+    private final static char SHIP = '*';
+    private final static int STARTING_NUM_SHIPS = 5;
 
     private Player[] players = new Player[2];
     private Scanner systemIn = new Scanner(System.in);
