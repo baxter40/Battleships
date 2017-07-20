@@ -24,4 +24,8 @@ public class GameBoard {
     public void setBoardType(char boardType) {
         this.boardType = boardType;
     }
+
+    public void placeShips() {
+
+    }
 }

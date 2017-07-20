@@ -2,21 +2,22 @@ package com.hamish.battleships;
 
 public class Player {
 
-    private final int STARTING_SHIP_NUM = 5;
     public GameBoard[] boards = new GameBoard[2];
-    private Ship[] ships = new Ship[STARTING_SHIP_NUM];
+    private Ship[] ships;
     private String name;
-    private int numShips = STARTING_SHIP_NUM;
+    private int numShips;
 
-    public Player(String tempName) {
-        name = tempName;
+    public Player(String name, int startingNumShips) {
+        this.name = name;
+        this.numShips = startingNumShips;
         boards[0].setBoardType('A');
         boards[1].setBoardType('D');
         createShips();
     }
 
     private void createShips() {
-        for (int i = 0; i < STARTING_SHIP_NUM; i++) {
+        ships = new Ship[numShips];
+        for (int i = 0; i < numShips; i++) {
             ships[i] = new Ship(i + 1);
         }
     }
