@@ -44,4 +44,13 @@ public class Ship {
         health--;
     }
 
+    /**
+     * Called to get length of the ship
+     *
+     * @return length of the ship
+     */
+    public int getLength() {
+        return length;
+    }
+
 }

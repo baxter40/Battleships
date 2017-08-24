@@ -16,6 +16,11 @@ public class GameBoard {
     private char boardType;
 
     /**
+     * A char to make code more readable
+     */
+    private final char SHIP = '*';
+
+    /**
      * The constructor. Takes in a char for {@link com.hamish.battleships.GameBoard#boardType board type} and assigns
      * this as the stored {@link com.hamish.battleships.GameBoard#boardType board type}
      *
@@ -63,7 +68,44 @@ public class GameBoard {
         return boardType;
     }
 
-    public void placeShips() {
+    /**
+     * Checks a set area to see if there any ships already placed in this area
+     *
+     * @param xCoordinate X coordinate of where to start checking
+     * @param yCoordinate Y coordinate of where to start checking
+     * @param direction   direction to check in
+     * @param shipLength  length of ship to check
+     * @return true if clear to enter ship, false if not
+     */
+    public boolean checkPositionClear(int xCoordinate, int yCoordinate, String direction, int shipLength) {
+        if (direction.equals("R")) {
+            for (int i = 0; i < shipLength; i++) {
+                if (getPosition(yCoordinate, xCoordinate + i) == SHIP) ;
+                return false;
+            }
+        } else {
+            for (int i = 0; i < shipLength; i++) {
+                if (getPosition(yCoordinate + i, xCoordinate) == SHIP) ;
+                return false;
+            }
+        }
+        return true;
+    }
 
+    /**
+     * Places the ships using * to denote where a ship is
+     *
+     * @param xCoordinate X coordinate to place ship
+     * @param yCoordinate Y coordinate to place ship
+     * @param direction   direction ship will be placed in
+     * @param shipLength  length of the ship
+     */
+    public void placeShip(int xCoordinate, int yCoordinate, String direction, int shipLength) {
+        for (int i = 0; i < shipLength; i++) {
+            if (direction.equals("R"))
+                setPosition(SHIP, yCoordinate, xCoordinate + i);
+            else
+                setPosition(SHIP, yCoordinate + i, xCoordinate);
+        }
     }
 }

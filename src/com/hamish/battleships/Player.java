@@ -1,5 +1,7 @@
 package com.hamish.battleships;
 
+import java.util.Scanner;
+
 /**
  * A class to store everything the player needs, including {@link com.hamish.battleships.GameBoard game boards} and
  * {@link com.hamish.battleships.Ship}
@@ -38,6 +40,7 @@ public class Player {
         this.numShips = startingNumShips;
         createShips();
         assignBoardTypes();
+        placeShips();
     }
 
     /**
@@ -57,5 +60,61 @@ public class Player {
     private void assignBoardTypes() {
         boards[0] = new GameBoard('A');
         boards[1] = new GameBoard('D');
+    }
+
+    /**
+     * Called to place the ships. Gets an x coordinate and y coordinate and direction, checks for errors then uses
+     * {@link com.hamish.battleships.GameBoard#checkPositionClear(int, int, String, int)} to check to see if this is
+     * available. If it isn't it loops. Then uses
+     * {@link com.hamish.battleships.GameBoard#placeShip(int, int, String, int)} to put the ships on the board
+     */
+    private void placeShips() {
+        Scanner systemIn = new Scanner(System.in);
+        int x = 0, y = 0;
+        String direction = "";
+        boolean shipPlacement = false;
+
+        System.out.println("Please place your ships with an x, y coordinate, i.e x,y and the a direction, either R for" +
+                "right, or D for down");
+
+        for (int i = 0; i < numShips; i++) {
+            while (shipPlacement == false) {
+
+                while (true) {
+                    System.out.print("\nPlease enter x coordinate:\t");
+                    try {
+                        x = Integer.parseInt(systemIn.next()); //TODO check converting string to int
+                    } catch (Exception e) {
+                        System.out.print(e); //TODO Check error printing
+                    }
+                    if (x >= 0 && x < 10)
+                        break;
+                }
+
+                while (true) {
+                    System.out.print("\nPlease enter the y coordinate:\t");
+                    try {
+                        y = Integer.parseInt(systemIn.next());
+                    } catch (Exception e) {
+                        System.err.print(e);
+                    }
+                    if (y >= 0 && y < 10)
+                        break;
+                }
+
+                while (true) {
+                    System.out.print("\nPlease enter the direction:\t");
+                    direction = systemIn.next();
+                    direction.toUpperCase();
+                    if (direction.equals("R") || direction.equals("D")) //TODO check string equals
+                        break;
+                }
+
+                shipPlacement = boards[0].checkPositionClear(x, y, direction, ships[i].getLength());
+
+            }
+
+            boards[0].placeShip(x, y, direction, ships[i].getLength());
+        }
     }
 }
