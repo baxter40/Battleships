@@ -83,9 +83,9 @@ public class Player {
                 while (true) {
                     System.out.print("\nPlease enter x coordinate:\t");
                     try {
-                        x = Integer.parseInt(systemIn.next()); //TODO check converting string to int
+                        x = Integer.parseInt(systemIn.next());
                     } catch (Exception e) {
-                        System.out.print(e); //TODO Check error printing
+                        System.err.print(e);
                     }
                     if (x >= 0 && x < 10)
                         break;
@@ -106,7 +106,7 @@ public class Player {
                     System.out.print("\nPlease enter the direction:\t");
                     direction = systemIn.next();
                     direction.toUpperCase();
-                    if (direction.equals("R") || direction.equals("D")) //TODO check string equals
+                    if (direction.equals("R") || direction.equals("D")) ;
                         break;
                 }
 
