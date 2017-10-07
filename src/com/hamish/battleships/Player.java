@@ -66,7 +66,8 @@ public class Player {
      * Called to place the ships. Gets an x coordinate and y coordinate and direction, checks for errors then uses
      * {@link com.hamish.battleships.GameBoard#checkPositionClear(int, int, String, int)} to check to see if this is
      * available. If it isn't it loops. Then uses
-     * {@link com.hamish.battleships.GameBoard#placeShip(int, int, String, int)} to put the ships on the board
+     * {@link com.hamish.battleships.GameBoard#placeShip(int, int, String, int)} to put the ships on the board and
+     * prints the board when done using {@link GameBoard#printBoard()}
      */
     private void placeShips() {
         Scanner systemIn = new Scanner(System.in);
@@ -80,10 +81,12 @@ public class Player {
         for (int i = 0; i < numShips; i++) {
             while (!shipPlacement) {
 
+                System.out.println("Place ship of length " + ships[i].getLength());
+
                 while (true) {
                     System.out.print("\nPlease enter x coordinate:\t");
                     try {
-                        x = Integer.parseInt(systemIn.next());
+                        x = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
                     } catch (Exception e) {
                         System.err.print(e);
                     }
@@ -94,7 +97,7 @@ public class Player {
                 while (true) {
                     System.out.print("\nPlease enter the y coordinate:\t");
                     try {
-                        y = Integer.parseInt(systemIn.next());
+                        y = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
                     } catch (Exception e) {
                         System.err.print(e);
                     }
