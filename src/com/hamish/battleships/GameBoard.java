@@ -80,12 +80,12 @@ public class GameBoard {
     public boolean checkPositionClear(int xCoordinate, int yCoordinate, String direction, int shipLength) {
         if (direction.equals("R")) {
             for (int i = 0; i < shipLength; i++) {
-                if (getPosition(yCoordinate, xCoordinate + i) == SHIP) ;
+                if (getPosition(yCoordinate, xCoordinate + i) == SHIP)
                 return false;
             }
         } else {
             for (int i = 0; i < shipLength; i++) {
-                if (getPosition(yCoordinate + i, xCoordinate) == SHIP) ;
+                if (getPosition(yCoordinate + i, xCoordinate) == SHIP)
                 return false;
             }
         }

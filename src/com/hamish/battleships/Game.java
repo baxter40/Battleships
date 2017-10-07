@@ -53,7 +53,8 @@ public class Game {
      */
     private void setUpPlayers() {
         for (int i = 0; i < 2; i++) {
-            System.out.print("Please enter the name of player " + i + 1 + ":    ");
+            int playerNum = i + 1;
+            System.out.print("Please enter the name of player " + playerNum + ":    ");
             players[i] = new Player(systemIn.next(), STARTING_NUM_SHIPS);
         }
     }

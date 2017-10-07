@@ -78,7 +78,7 @@ public class Player {
                 "right, or D for down");
 
         for (int i = 0; i < numShips; i++) {
-            while (shipPlacement == false) {
+            while (!shipPlacement) {
 
                 while (true) {
                     System.out.print("\nPlease enter x coordinate:\t");
@@ -107,14 +107,17 @@ public class Player {
                     direction = systemIn.next();
                     direction.toUpperCase();
                     if (direction.equals("R") || direction.equals("D")) ;
-                        break;
+                    break;
                 }
 
                 shipPlacement = boards[0].checkPositionClear(x, y, direction, ships[i].getLength());
+                if (!shipPlacement) {
+                    System.out.println("Position not clear, please choose a clear position");
+                }
 
             }
-
             boards[0].placeShip(x, y, direction, ships[i].getLength());
+            shipPlacement = false;
         }
     }
 }
