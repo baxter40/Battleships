@@ -117,6 +117,7 @@ public class Player {
 
             }
             boards[0].placeShip(x, y, direction, ships[i].getLength());
+            boards[0].printBoard();
             shipPlacement = false;
         }
     }

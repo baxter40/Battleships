@@ -108,4 +108,16 @@ public class GameBoard {
                 setPosition(SHIP, yCoordinate + i, xCoordinate);
         }
     }
+
+    /**
+     * Prints out the game board
+     */
+    public void printBoard() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(board[j][i]);
+            }
+            System.out.print("\n");
+        }
+    }
 }
