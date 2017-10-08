@@ -122,13 +122,13 @@ public class Player {
                 }
 
                 if (direction.equals("D")) {
-                    if (y + ships[i].getLength() >= 10) {
+                    if (y + ships[i].getLength() > 10) {
                         System.out.println("Please enter an option that keeps the ship on the board!");
                         validPosition = false;
                     } else
                         validPosition = true;
                 } else {
-                    if (x + ships[i].getLength() >= 10) {
+                    if (x + ships[i].getLength() > 10) {
                         System.out.println("Please enter an option that keeps the ship on the board!");
                         validPosition = false;
                     } else
