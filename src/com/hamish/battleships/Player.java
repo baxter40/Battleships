@@ -63,8 +63,8 @@ public class Player {
     }
 
     /**
-     * Called to place the ships. Gets an x coordinate and y coordinate and direction, and checks to make sure that this
-     * position is on the board. It then checks for errors then uses
+     * Called to place the ships. Gets an x coordinate and y coordinate using {@link #getCoordinate()} and direction,
+     * and checks to make sure that this position is on the board. It then checks for errors then uses
      * {@link com.hamish.battleships.GameBoard#checkPositionClear(int, int, String, int)} to check to see if this is
      * available. If it isn't it loops. Then uses
      * {@link com.hamish.battleships.GameBoard#placeShip(int, int, String, int)} to put the ships on the board and
@@ -72,43 +72,30 @@ public class Player {
      */
     private void placeShips() {
         Scanner systemIn = new Scanner(System.in);
-        int x = 0, y = 0;
-        String direction = "";
-        boolean shipPlacement = false;
-        boolean validPosition = false;
+        int x, y;
+        String direction;
+        boolean shipPlacement;
 
         System.out.println("Please place your ships with an x, y coordinate, i.e x,y and the a direction, either R for" +
                 "right, or D for down");
 
         for (int i = 0; i < numShips; i++) {
+            shipPlacement = false;
+            x = -1;
+            y = -1;
             while (!shipPlacement) {
 
                 System.out.println("Place ship of length " + ships[i].getLength());
 
-                while (true) {
+                while (x < 0 || x >= 10) {
                     System.out.print("\nPlease enter the column:\t");
-                    try {
-                        x = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
-                    } catch (Exception e) {
-                        System.err.print(e);
-                    }
-                    if (x >= 0 && x < 10)
-                        break;
-                    else
-                        System.out.println("Please enter a valid option between 1 and 10");
+                    x = getCoordinate();
                 }
 
-                while (true) {
+                while (y < 0 || y >= 10) {
                     System.out.print("\nPlease enter the row:\t");
-                    try {
-                        y = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
-                    } catch (Exception e) {
-                        System.err.print(e);
-                    }
-                    if (y >= 0 && y < 10)
-                        break;
-                    else
-                        System.out.println("Please enter a valid option between 1 and 10");
+                    y = getCoordinate();
+
                 }
 
                 while (true) {
@@ -121,34 +108,63 @@ public class Player {
                         System.out.println("Please enter a valid option of either 'R' or 'D'");
                 }
 
-                if (direction.equals("D")) {
-                    if (y + ships[i].getLength() > 10) {
-                        System.out.println("Please enter an option that keeps the ship on the board!");
-                        validPosition = false;
-                    } else
-                        validPosition = true;
-                } else {
-                    if (x + ships[i].getLength() > 10) {
-                        System.out.println("Please enter an option that keeps the ship on the board!");
-                        validPosition = false;
-                    } else
-                        validPosition = true;
-                }
 
-                if (validPosition)
-                    shipPlacement = boards[0].checkPositionClear(x, y, direction, ships[i].getLength());
-                else
-                    shipPlacement = false;
-
-                if (!shipPlacement) {
-                    if (validPosition)
+                if (checkPositionValid(x, y, ships[i].getLength(), direction)) {
+                    if (boards[0].checkPositionClear(x, y, direction, ships[i].getLength())) {
+                        boards[0].placeShip(x, y, direction, ships[i].getLength());
+                        boards[0].printBoard();
+                        shipPlacement = true;
+                    } else {
                         System.out.println("Position not clear, please choose a clear position");
-                }
-
+                        shipPlacement = false;
+                    }
+                } else
+                    shipPlacement = false;
             }
-            boards[0].placeShip(x, y, direction, ships[i].getLength());
-            boards[0].printBoard();
-            shipPlacement = false;
+        }
+    }
+
+    /**
+     * Gets and int value from an input and then passes it back
+     *
+     * @return int value of input
+     */
+    private int getCoordinate() {
+        int value = -1;
+        Scanner systemIn = new Scanner(System.in);
+        try {
+            value = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
+        } catch (Exception e) {
+            System.err.print(e);
+        }
+        if (value < 0 && value >= 10)
+            System.out.println("Please enter a valid option between 1 and 10");
+
+        return value;
+    }
+
+    /**
+     * Returns a boolean if a ship can be placed in the position provided and direction.
+     *
+     * @param col        column to be checked
+     * @param row        row to be checked
+     * @param shipLength the length of the ship
+     * @param direction  the direction to be placed
+     * @return a boolean if the ship can be entered in this position
+     */
+    private boolean checkPositionValid(int col, int row, int shipLength, String direction) {
+        if (direction.equals("D")) {
+            if (row + shipLength > 10) {
+                System.out.println("Please enter an option that keeps the ship on the board!");
+                return false;
+            } else
+                return true;
+        } else {
+            if (col + shipLength > 10) {
+                System.out.println("Please enter an option that keeps the ship on the board!");
+                return false;
+            } else
+                return true;
         }
     }
 }
