@@ -63,7 +63,8 @@ public class Player {
     }
 
     /**
-     * Called to place the ships. Gets an x coordinate and y coordinate and direction, checks for errors then uses
+     * Called to place the ships. Gets an x coordinate and y coordinate and direction, and checks to make sure that this
+     * position is on the board. It then checks for errors then uses
      * {@link com.hamish.battleships.GameBoard#checkPositionClear(int, int, String, int)} to check to see if this is
      * available. If it isn't it loops. Then uses
      * {@link com.hamish.battleships.GameBoard#placeShip(int, int, String, int)} to put the ships on the board and
@@ -74,6 +75,7 @@ public class Player {
         int x = 0, y = 0;
         String direction = "";
         boolean shipPlacement = false;
+        boolean validPosition = false;
 
         System.out.println("Please place your ships with an x, y coordinate, i.e x,y and the a direction, either R for" +
                 "right, or D for down");
@@ -84,7 +86,7 @@ public class Player {
                 System.out.println("Place ship of length " + ships[i].getLength());
 
                 while (true) {
-                    System.out.print("\nPlease enter x coordinate:\t");
+                    System.out.print("\nPlease enter the column:\t");
                     try {
                         x = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
                     } catch (Exception e) {
@@ -97,7 +99,7 @@ public class Player {
                 }
 
                 while (true) {
-                    System.out.print("\nPlease enter the y coordinate:\t");
+                    System.out.print("\nPlease enter the row:\t");
                     try {
                         y = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
                     } catch (Exception e) {
@@ -119,9 +121,28 @@ public class Player {
                         System.out.println("Please enter a valid option of either 'R' or 'D'");
                 }
 
-                shipPlacement = boards[0].checkPositionClear(x, y, direction, ships[i].getLength());
+                if (direction.equals("D")) {
+                    if (y + ships[i].getLength() >= 10) {
+                        System.out.println("Please enter an option that keeps the ship on the board!");
+                        validPosition = false;
+                    } else
+                        validPosition = true;
+                } else {
+                    if (x + ships[i].getLength() >= 10) {
+                        System.out.println("Please enter an option that keeps the ship on the board!");
+                        validPosition = false;
+                    } else
+                        validPosition = true;
+                }
+
+                if (validPosition)
+                    shipPlacement = boards[0].checkPositionClear(x, y, direction, ships[i].getLength());
+                else
+                    shipPlacement = false;
+
                 if (!shipPlacement) {
-                    System.out.println("Position not clear, please choose a clear position");
+                    if (validPosition)
+                        System.out.println("Position not clear, please choose a clear position");
                 }
 
             }

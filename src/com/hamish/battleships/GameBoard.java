@@ -1,7 +1,7 @@
 package com.hamish.battleships;
 
 /**
- * Game board class that controls the boards and can pass informationb back to the boards
+ * Game board class that controls the boards and can pass information back to the boards
  */
 public class GameBoard {
 
@@ -115,7 +115,7 @@ public class GameBoard {
     public void printBoard() {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                System.out.print(board[j][i]);
+                System.out.print(board[i][j]);
             }
             System.out.print("\n");
         }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="904fab17-f3e9-4ca7-8db4-0624b9382217" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java" afterPath="$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/hamish/battleships/Player.java" afterPath="$PROJECT_DIR$/src/com/hamish/battleships/Player.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,7 +22,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="180">
               <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding />
             </state>
@@ -31,15 +32,13 @@
       <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="112" column="32" lean-forward="false" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+            <state relative-caret-position="228">
+              <caret line="75" column="19" lean-forward="true" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
               <folding>
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#798#799#0" expanded="true" />
-                <element signature="e#1212#1213#0" expanded="true" />
-                <element signature="e#1258#1259#0" expanded="true" />
-                <element signature="e#1502#1503#0" expanded="true" />
-                <element signature="e#1543#1544#0" expanded="true" />
+                <element signature="e#1501#1502#0" expanded="true" />
+                <element signature="e#1542#1543#0" expanded="true" />
+                <element signature="e#1703#1704#0" expanded="true" />
+                <element signature="e#1735#1736#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,7 +47,7 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
+            <state relative-caret-position="1008">
               <caret line="56" column="75" lean-forward="false" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
               <folding />
             </state>
@@ -58,7 +57,7 @@
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="864">
               <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#1274#1275#0" expanded="true" />
@@ -70,8 +69,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="99" column="108" lean-forward="false" selection-start-line="99" selection-start-column="108" selection-end-line="99" selection-end-column="108" />
+            <state relative-caret-position="444">
+              <caret line="147" column="41" lean-forward="false" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -137,9 +136,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,6 +158,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,6 +243,7 @@
       <workItem from="1506629005067" duration="8000" />
       <workItem from="1507391982387" duration="19000" />
       <workItem from="1507392018508" duration="2804000" />
+      <workItem from="1507477461556" duration="2093000" />
     </task>
     <task id="LOCAL-00001" summary="Started writing code, written an outline to all classes and started writing some functions">
       <created>1500490646369</created>
@@ -308,11 +308,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507394950731</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added messages when user enters wrong option when placing ships">
+      <created>1507477837576</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1507477837576</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18666000" />
+    <option name="totallyTimeSpent" value="20759000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,26 +342,26 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.184375" sideWeight="0.49441788" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.184375" sideWeight="0.50558215" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +380,8 @@
     <MESSAGE value="Checked TODOs and removed them" />
     <MESSAGE value="Fixed issues with player number counter, and also placing ships on the board" />
     <MESSAGE value="Added print board method and set to run everytime a ship is placed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added print board method and set to run everytime a ship is placed" />
+    <MESSAGE value="Added messages when user enters wrong option when placing ships" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added messages when user enters wrong option when placing ships" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -386,8 +394,14 @@
           <line>39</line>
           <properties />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -439,12 +453,10 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -514,12 +526,10 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -563,12 +573,10 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -620,12 +628,10 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -687,12 +693,10 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -743,12 +747,10 @@
         <state relative-caret-position="1044">
           <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -766,12 +768,10 @@
         <state relative-caret-position="306">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -812,7 +812,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="180">
           <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding />
         </state>
@@ -820,7 +820,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
+        <state relative-caret-position="1008">
           <caret line="56" column="75" lean-forward="false" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
           <folding />
         </state>
@@ -828,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="864">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="e#1274#1275#0" expanded="true" />
@@ -846,7 +846,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="62.0" y="16.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="62.0" y="17.0" />
           <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
@@ -856,23 +856,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="112" column="32" lean-forward="false" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+        <state relative-caret-position="228">
+          <caret line="75" column="19" lean-forward="true" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
           <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="99" column="108" lean-forward="false" selection-start-line="99" selection-start-column="108" selection-end-line="99" selection-end-column="108" />
+        <state relative-caret-position="444">
+          <caret line="147" column="41" lean-forward="false" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
           <folding />
         </state>
       </provider>
