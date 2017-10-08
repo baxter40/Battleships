@@ -92,6 +92,8 @@ public class Player {
                     }
                     if (x >= 0 && x < 10)
                         break;
+                    else
+                        System.out.println("Please enter a valid option between 1 and 10");
                 }
 
                 while (true) {
@@ -103,14 +105,18 @@ public class Player {
                     }
                     if (y >= 0 && y < 10)
                         break;
+                    else
+                        System.out.println("Please enter a valid option between 1 and 10");
                 }
 
                 while (true) {
                     System.out.print("\nPlease enter the direction:\t");
                     direction = systemIn.next();
                     direction.toUpperCase();
-                    if (direction.equals("R") || direction.equals("D")) ;
-                    break;
+                    if (direction.equals("R") || direction.equals("D"))
+                        break;
+                    else
+                        System.out.println("Please enter a valid option of either 'R' or 'D'");
                 }
 
                 shipPlacement = boards[0].checkPositionClear(x, y, direction, ships[i].getLength());
