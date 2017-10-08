@@ -44,20 +44,20 @@ public class GameBoard {
      *
      * @param character Character to assign
      * @param row       Row to assign to
-     * @param column    Column to assign to
+     * @param col    Column to assign to
      */
-    public void setPosition(char character, int row, int column) {
-        board[row][column] = character;
+    public void setPosition(char character, int col, int row) {
+        board[col][row] = character;
     }
 
     /**
      * Gets the character from a certain position
+     * @param col Column to get char from
      * @param row Row to get char from
-     * @param column Column to get char from
      * @return Char in position asked for
      */
-    public char getPosition(int row, int column) {
-        return board[row][column];
+    public char getPosition(int col, int row) {
+        return board[col][row];
     }
 
     /**
@@ -71,21 +71,21 @@ public class GameBoard {
     /**
      * Checks a set area to see if there any ships already placed in this area
      *
-     * @param xCoordinate X coordinate of where to start checking
-     * @param yCoordinate Y coordinate of where to start checking
+     * @param col X coordinate of where to start checking
+     * @param row Y coordinate of where to start checking
      * @param direction   direction to check in
      * @param shipLength  length of ship to check
      * @return true if clear to enter ship, false if not
      */
-    public boolean checkPositionClear(int xCoordinate, int yCoordinate, String direction, int shipLength) {
-        if (direction.equals("R")) {
+    public boolean checkPositionClear(int col, int row, String direction, int shipLength) {
+        if (direction.equalsIgnoreCase("R")) {
             for (int i = 0; i < shipLength; i++) {
-                if (getPosition(yCoordinate, xCoordinate + i) == SHIP)
+                if (getPosition(row, col + i) == SHIP)
                 return false;
             }
         } else {
             for (int i = 0; i < shipLength; i++) {
-                if (getPosition(yCoordinate + i, xCoordinate) == SHIP)
+                if (getPosition(row + i, col) == SHIP)
                 return false;
             }
         }
@@ -95,17 +95,17 @@ public class GameBoard {
     /**
      * Places the ships using * to denote where a ship is
      *
-     * @param xCoordinate X coordinate to place ship
-     * @param yCoordinate Y coordinate to place ship
+     * @param col X coordinate to place ship
+     * @param row Y coordinate to place ship
      * @param direction   direction ship will be placed in
      * @param shipLength  length of the ship
      */
-    public void placeShip(int xCoordinate, int yCoordinate, String direction, int shipLength) {
+    public void placeShip(int col, int row, String direction, int shipLength) {
         for (int i = 0; i < shipLength; i++) {
-            if (direction.equals("R"))
-                setPosition(SHIP, yCoordinate, xCoordinate + i);
+            if (direction.equalsIgnoreCase("R"))
+                setPosition(SHIP, row, col + i);
             else
-                setPosition(SHIP, yCoordinate + i, xCoordinate);
+                setPosition(SHIP, row + i, col);
         }
     }
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="904fab17-f3e9-4ca7-8db4-0624b9382217" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java" afterPath="$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/hamish/battleships/Player.java" afterPath="$PROJECT_DIR$/src/com/hamish/battleships/Player.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,16 +29,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="95" column="13" lean-forward="true" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+            <state relative-caret-position="223">
+              <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
               <folding>
-                <element signature="e#1501#1502#0" expanded="true" />
-                <element signature="e#1542#1543#0" expanded="true" />
-                <element signature="e#1703#1704#0" expanded="true" />
-                <element signature="e#1735#1736#0" expanded="true" />
+                <element signature="e#1205#1206#0" expanded="true" />
+                <element signature="e#1248#1249#0" expanded="true" />
+                <element signature="e#1486#1487#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+                <element signature="e#1685#1686#0" expanded="true" />
+                <element signature="e#1717#1718#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +49,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="56" column="75" lean-forward="false" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
+            <state relative-caret-position="275">
+              <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -56,7 +59,7 @@
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
+            <state relative-caret-position="293">
               <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#1274#1275#0" expanded="true" />
@@ -65,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+            <state relative-caret-position="222">
+              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,6 +86,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>equals</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -99,8 +107,8 @@
         <option value="$PROJECT_DIR$/src/com/hamish/battleships/Main.java" />
         <option value="$PROJECT_DIR$/src/com/hamish/battleships/Ship.java" />
         <option value="$PROJECT_DIR$/src/com/hamish/battleships/Game.java" />
-        <option value="$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/com/hamish/battleships/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java" />
       </list>
     </option>
   </component>
@@ -242,7 +250,7 @@
       <workItem from="1506629005067" duration="8000" />
       <workItem from="1507391982387" duration="19000" />
       <workItem from="1507392018508" duration="2804000" />
-      <workItem from="1507477461556" duration="4112000" />
+      <workItem from="1507477461556" duration="5984000" />
     </task>
     <task id="LOCAL-00001" summary="Started writing code, written an outline to all classes and started writing some functions">
       <created>1500490646369</created>
@@ -335,11 +343,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507479997152</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Tidied up code and split method placeShips into different functions for easier reading">
+      <created>1507481606593</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1507481606593</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22778000" />
+    <option name="totallyTimeSpent" value="24650000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,7 +418,8 @@
     <MESSAGE value="Added validation to stop entering a ship position that would go off the board" />
     <MESSAGE value="Fixed issue of not letting you enter a position on the edge of the board" />
     <MESSAGE value="Added numbers printed around the edge of the game board" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added numbers printed around the edge of the game board" />
+    <MESSAGE value="Tidied up code and split method placeShips into different functions for easier reading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tidied up code and split method placeShips into different functions for easier reading" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -413,17 +429,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/hamish/battleships/Player.java</url>
-          <line>39</line>
+          <line>101</line>
           <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java</url>
-          <line>59</line>
-          <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -475,10 +486,12 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -548,10 +561,12 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,10 +610,12 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,10 +667,12 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -715,10 +734,12 @@
         <state relative-caret-position="1782">
           <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -769,10 +790,12 @@
         <state relative-caret-position="1044">
           <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -790,10 +813,12 @@
         <state relative-caret-position="306">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -840,16 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#1274#1275#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/com.hamish.battleships.GameBoard">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -870,30 +885,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="56" column="75" lean-forward="false" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
+        <state relative-caret-position="275">
+          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="95" column="13" lean-forward="true" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+        <state relative-caret-position="293">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        <state relative-caret-position="222">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hamish/battleships/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+          <folding>
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

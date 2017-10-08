@@ -72,46 +72,45 @@ public class Player {
      */
     private void placeShips() {
         Scanner systemIn = new Scanner(System.in);
-        int x, y;
+        int col, row;
         String direction;
         boolean shipPlacement;
 
-        System.out.println("Please place your ships with an x, y coordinate, i.e x,y and the a direction, either R for" +
+        System.out.println("Please place your ships with an column and row and the a direction, either R for" +
                 "right, or D for down");
 
         for (int i = 0; i < numShips; i++) {
             shipPlacement = false;
-            x = -1;
-            y = -1;
+            col = -1;
+            row = -1;
             while (!shipPlacement) {
 
                 System.out.println("Place ship of length " + ships[i].getLength());
 
-                while (x < 0 || x >= 10) {
+                while (col < 0 || col >= 10) {
                     System.out.print("\nPlease enter the column:\t");
-                    x = getCoordinate();
+                    col = getCoordinate();
                 }
 
-                while (y < 0 || y >= 10) {
+                while (row < 0 || row >= 10) {
                     System.out.print("\nPlease enter the row:\t");
-                    y = getCoordinate();
+                    row = getCoordinate();
 
                 }
 
                 while (true) {
                     System.out.print("\nPlease enter the direction:\t");
                     direction = systemIn.next();
-                    direction.toUpperCase();
-                    if (direction.equals("R") || direction.equals("D"))
+                    if (direction.equalsIgnoreCase("R") || direction.equalsIgnoreCase("D"))
                         break;
                     else
                         System.out.println("Please enter a valid option of either 'R' or 'D'");
                 }
 
 
-                if (checkPositionValid(x, y, ships[i].getLength(), direction)) {
-                    if (boards[0].checkPositionClear(x, y, direction, ships[i].getLength())) {
-                        boards[0].placeShip(x, y, direction, ships[i].getLength());
+                if (checkPositionValid(col, row, ships[i].getLength(), direction)) {
+                    if (boards[0].checkPositionClear(col, row, direction, ships[i].getLength())) {
+                        boards[0].placeShip(col, row, direction, ships[i].getLength());
                         boards[0].printBoard();
                         shipPlacement = true;
                     } else {
@@ -153,7 +152,7 @@ public class Player {
      * @return a boolean if the ship can be entered in this position
      */
     private boolean checkPositionValid(int col, int row, int shipLength, String direction) {
-        if (direction.equals("D")) {
+        if (direction.equalsIgnoreCase("D")) {
             if (row + shipLength > 10) {
                 System.out.println("Please enter an option that keeps the ship on the board!");
                 return false;
