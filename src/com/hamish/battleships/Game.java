@@ -39,12 +39,14 @@ public class Game {
     private Scanner systemIn = new Scanner(System.in);
 
     /**
-     * Constructor. Prints welcome message then runs method {@link Game#setUpPlayers() setUpPlayers}
+     * Constructor. Prints welcome message then runs method {@link Game#setUpPlayers() setUpPlayers}, after which runs
+     * {@link Game#playGame() playGame}.
      */
     public Game() {
 
         System.out.println("Welcome to battleships!");
         setUpPlayers();
+        playGame();
 
     }
 
@@ -56,6 +58,19 @@ public class Game {
             int playerNum = i + 1;
             System.out.print("Please enter the name of player " + playerNum + ":    ");
             players[i] = new Player(systemIn.next(), STARTING_NUM_SHIPS);
+        }
+    }
+
+    private void playGame() {
+        while (players[0].shipLeft() && players[1].shipLeft()) {
+            int[] attackCo = new int[2];
+            attackCo = players[0].playerGo();
+
+        }
+        if (!players[0].shipLeft()) {
+            System.out.println("Congratulations " + players[1].getName() + " won!");
+        } else {
+            System.out.println("Congratulations " + players[0].getName() + " won!");
         }
     }
 

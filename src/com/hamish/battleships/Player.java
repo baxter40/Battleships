@@ -58,8 +58,8 @@ public class Player {
      * Creates two {@link com.hamish.battleships.GameBoard game boards} one attack, and one defence
      */
     private void assignBoardTypes() {
-        boards[0] = new GameBoard('A');
-        boards[1] = new GameBoard('D');
+        boards[0] = new GameBoard('D');
+        boards[1] = new GameBoard('A');
     }
 
     /**
@@ -88,14 +88,11 @@ public class Player {
                 System.out.println("Place ship of length " + ships[i].getLength());
 
                 while (col < 0 || col >= 10) {
-                    System.out.print("\nPlease enter the column:\t");
-                    col = getCoordinate();
+                    col = getValue("column");
                 }
 
                 while (row < 0 || row >= 10) {
-                    System.out.print("\nPlease enter the row:\t");
-                    row = getCoordinate();
-
+                    row = getValue("row");
                 }
 
                 while (true) {
@@ -165,5 +162,33 @@ public class Player {
             } else
                 return true;
         }
+    }
+
+    public boolean shipLeft() {
+        boolean shipLeft = false;
+        for (Ship ship : ships) {
+            if (ship.getHealth() > 0)
+                shipLeft = true;
+        }
+        return shipLeft;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int[] playerGo() {
+        int[] coord = new int[2];
+        boards[1].printBoard();
+
+        coord[0] = getValue("column");
+        coord[1] = getValue("row");
+
+        return coord;
+    }
+
+    private int getValue(String output) {
+        System.out.print("\nEnter the " + output + ":\t");
+        return getCoordinate();
     }
 }
