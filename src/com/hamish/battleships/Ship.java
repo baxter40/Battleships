@@ -17,6 +17,11 @@ public class Ship {
     private int health;
 
     /**
+     * Used to store the coordinates of the ship at each position of its length, with 0 being col and 1 being row
+     */
+    private int[][] coordinates;
+
+    /**
      * Constructor. Gets a {@link com.hamish.battleships.Ship#length length} and assigns this and then sets
      * {@link com.hamish.battleships.Ship#health health} to the same as
      * {@link com.hamish.battleships.Ship#length length}
@@ -25,6 +30,7 @@ public class Ship {
      */
     public Ship(int length) {
         this.length = length;
+        coordinates = new int[length][2];
         health = length;
     }
 
@@ -51,6 +57,30 @@ public class Ship {
      */
     public int getLength() {
         return length;
+    }
+
+    public void setCoordinates(int startCol, int startRow, String direction) {
+        int curCol = startCol;
+        int curRow = startRow;
+        if (direction.equalsIgnoreCase("r")) {
+            for (int i = 0; i < length; i++) {
+                coordinates[i][0] = curCol++;
+                coordinates[i][1] = startRow;
+            }
+        } else if (direction.equalsIgnoreCase("d")) {
+            for (int i = 0; i < length; i++) {
+                coordinates[i][0] = startCol;
+                coordinates[i][1] = curRow++;
+            }
+        }
+    }
+
+    public boolean shipInPosition(int col, int row) {
+        for (int[] co : coordinates) {
+            if (co[0] == col && co[1] == row)
+                return true;
+        }
+        return false;
     }
 
 }

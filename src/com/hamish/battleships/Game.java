@@ -67,16 +67,31 @@ public class Game {
      * Runs the game while both players have ships left. Once done prints a congratulations message
      */
     private void playGame() {
-        while (players[0].shipLeft() && players[1].shipLeft()) {
-            int[] attackCo = new int[2];
-            attackCo = players[0].playerGo();
-            clearBoard();
-
-        }
-        if (!players[0].shipLeft()) {
-            System.out.println("Congratulations " + players[1].getName() + " won!");
-        } else {
-            System.out.println("Congratulations " + players[0].getName() + " won!");
+        int[] attackCo = new int[2];
+        boolean bothPlayersIn = true;
+        while (bothPlayersIn) {
+            for (int i = 0; i < 2; i++) {
+                if (bothPlayersIn) {
+                    attackCo = players[i].playerGo();
+                    if (players[i == 1 ? 0 : 1].positionTaken(attackCo[0], attackCo[1])) {
+                        System.out.println("Ship Hit!");
+                    } else {
+                        System.out.println("No ships hit");
+                    }
+                    if (i == 0) {
+                        if (!players[1].shipLeft()) {
+                            bothPlayersIn = false;
+                            System.out.println("Congratulations " + players[0].getName() + " won!");
+                        }
+                    } else {
+                        if (!players[0].shipLeft()) {
+                            bothPlayersIn = false;
+                            System.out.println("Congratulations " + players[1].getName() + " won!");
+                        }
+                    }
+                    clearBoard();
+                }
+            }
         }
     }
 
