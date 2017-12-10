@@ -58,13 +58,19 @@ public class Game {
             int playerNum = i + 1;
             System.out.print("Please enter the name of player " + playerNum + ":    ");
             players[i] = new Player(systemIn.next(), STARTING_NUM_SHIPS);
+            clearBoard();
         }
+
     }
 
+    /**
+     * Runs the game while both players have ships left. Once done prints a congratulations message
+     */
     private void playGame() {
         while (players[0].shipLeft() && players[1].shipLeft()) {
             int[] attackCo = new int[2];
             attackCo = players[0].playerGo();
+            clearBoard();
 
         }
         if (!players[0].shipLeft()) {
@@ -72,6 +78,14 @@ public class Game {
         } else {
             System.out.println("Congratulations " + players[0].getName() + " won!");
         }
+    }
+
+    /**
+     * Prints enough new lines to hide board from other player
+     */
+    private void clearBoard() {
+        for (int i = 0; i < 5; i++)
+            System.out.println("\n\n");
     }
 
 }

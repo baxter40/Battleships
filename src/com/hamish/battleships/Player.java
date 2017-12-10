@@ -81,16 +81,16 @@ public class Player {
 
         for (int i = 0; i < numShips; i++) {
             shipPlacement = false;
-            col = -1;
-            row = -1;
             while (!shipPlacement) {
 
                 System.out.println("Place ship of length " + ships[i].getLength());
 
+                col = -1;
                 while (col < 0 || col >= 10) {
                     col = getValue("column");
                 }
 
+                row = -1;
                 while (row < 0 || row >= 10) {
                     row = getValue("row");
                 }
