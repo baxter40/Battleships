@@ -19,6 +19,11 @@ public class Player {
     private Ship[] ships;
 
     /**
+     * Stores char used to show ship
+     */
+    private final static char SHIP = '*';
+
+    /**
      * To store the name of the player
      */
     private String name;
@@ -79,11 +84,11 @@ public class Player {
         System.out.println("Please place your ships with an column and row and the a direction, either R for" +
                 "right, or D for down");
 
-        for (int i = 0; i < numShips; i++) {
+        for (Ship ship : ships) {
             shipPlacement = false;
             while (!shipPlacement) {
 
-                System.out.println("Place ship of length " + ships[i].getLength());
+                System.out.println("Place ship of length " + ship.getLength());
 
                 col = -1;
                 while (col < 0 || col >= 10) {
@@ -105,9 +110,10 @@ public class Player {
                 }
 
 
-                if (checkPositionValid(col, row, ships[i].getLength(), direction)) {
-                    if (boards[0].checkPositionClear(col, row, direction, ships[i].getLength())) {
-                        boards[0].placeShip(col, row, direction, ships[i].getLength());
+                if (checkPositionValid(col, row, ship.getLength(), direction)) {
+                    if (boards[0].checkPositionClear(col, row, direction, ship.getLength())) {
+                        boards[0].placeShip(col, row, direction, ship.getLength());
+                        ship.setCoordinates(col, row, direction);
                         boards[0].printBoard();
                         shipPlacement = true;
                     } else {
@@ -131,7 +137,8 @@ public class Player {
         try {
             value = Integer.parseInt(systemIn.next()) - 1; //Takes one off to account for 0 counting
         } catch (Exception e) {
-            System.err.print(e);
+            System.out.println("Please enter a valid option between 1 and 10");
+            //System.err.print(e);
         }
         if (value < 0 && value >= 10)
             System.out.println("Please enter a valid option between 1 and 10");
@@ -191,4 +198,17 @@ public class Player {
         System.out.print("\nEnter the " + output + ":\t");
         return getCoordinate();
     }
+
+    public boolean positionTaken(int row, int col) {
+        if (boards[1].getPosition(col, row) == SHIP) {
+            for (Ship sh : ships) {
+                if (sh.shipInPosition(col, row))
+                    sh.shipHit();
+            }
+            return true;
+        }
+        return false;
+    }
+
+
 }
