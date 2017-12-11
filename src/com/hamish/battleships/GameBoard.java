@@ -80,12 +80,12 @@ public class GameBoard {
     public boolean checkPositionClear(int col, int row, String direction, int shipLength) {
         if (direction.equalsIgnoreCase("R")) {
             for (int i = 0; i < shipLength; i++) {
-                if (getPosition(row, col + i) == SHIP)
+                if (getPosition(col + i, row) == SHIP)
                 return false;
             }
         } else {
             for (int i = 0; i < shipLength; i++) {
-                if (getPosition(row + i, col) == SHIP)
+                if (getPosition(col, row + i) == SHIP)
                 return false;
             }
         }
@@ -103,9 +103,9 @@ public class GameBoard {
     public void placeShip(int col, int row, String direction, int shipLength) {
         for (int i = 0; i < shipLength; i++) {
             if (direction.equalsIgnoreCase("R"))
-                setPosition(SHIP, row, col + i);
+                setPosition(SHIP, col + i, row);
             else
-                setPosition(SHIP, row + i, col);
+                setPosition(SHIP, col, row + i);
         }
     }
 

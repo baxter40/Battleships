@@ -24,6 +24,16 @@ public class Player {
     private final static char SHIP = '*';
 
     /**
+     * Char to make code more readable
+     */
+    private final static char HIT = 'H';
+
+    /**
+     * Char to make code more readable
+     */
+    private final static char MISS = 'M';
+
+    /**
      * To store the name of the player
      */
     private String name;
@@ -199,15 +209,29 @@ public class Player {
         return getCoordinate();
     }
 
-    public boolean positionTaken(int row, int col) {
+    public boolean positionTaken(int col, int row) {
         if (boards[1].getPosition(col, row) == SHIP) {
             for (Ship sh : ships) {
-                if (sh.shipInPosition(col, row))
+                if (sh.shipInPosition(col, row)) {
                     sh.shipHit();
+                    if (sh.getHealth() < 1) {
+                        System.out.println("Ship sunk!");
+                    }
+                }
             }
             return true;
         }
         return false;
+    }
+
+    public void attackHit(int col, int row) {
+        boards[1].setPosition(HIT, col, row);
+        boards[1].printBoard();
+    }
+
+    public void attackMissed(int col, int row) {
+        boards[1].setPosition(MISS, col, row);
+        boards[1].printBoard();
     }
 
 
