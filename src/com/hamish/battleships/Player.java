@@ -151,7 +151,7 @@ public class Player {
             //System.err.print(e);
         }
         if (value < 0 && value >= 10)
-            System.out.println("Please enter a valid option between 1 and 10");
+            System.out.println("Please entHer a valid option between 1 and 10");
 
         return value;
     }
