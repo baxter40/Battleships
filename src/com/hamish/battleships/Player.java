@@ -150,8 +150,9 @@ public class Player {
             System.out.println("Please enter a valid option between 1 and 10");
             //System.err.print(e);
         }
-        if (value < 0 && value >= 10)
+        if (value < 0 || value >= 10) {
             System.out.println("Please entHer a valid option between 1 and 10");
+        }
 
         return value;
     }
@@ -182,12 +183,11 @@ public class Player {
     }
 
     public boolean shipLeft() {
-        boolean shipLeft = false;
         for (Ship ship : ships) {
             if (ship.getHealth() > 0)
-                shipLeft = true;
+                return true;
         }
-        return shipLeft;
+        return false;
     }
 
     public String getName() {
@@ -210,21 +210,18 @@ public class Player {
     }
 
     public boolean positionTaken(int col, int row) {
-        if (boards[1].getPosition(col, row) == SHIP) {
-            for (Ship sh : ships) {
-                if (sh.shipInPosition(col, row)) {
-                    sh.shipHit();
-                    if (sh.getHealth() < 1) {
-                        System.out.println("Ship sunk!");
-                    }
-                }
-            }
-            return true;
-        }
-        return false;
+        return boards[0].getPosition(col, row) == SHIP;
     }
 
     public void attackHit(int col, int row) {
+        for (Ship sh : ships) {
+            if (sh.shipInPosition(col, row)) {
+                sh.shipHit();
+                if (sh.getHealth() < 1) {
+                    System.out.println("Ship sunk!");
+                }
+            }
+        }
         boards[1].setPosition(HIT, col, row);
         boards[1].printBoard();
     }
