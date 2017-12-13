@@ -196,6 +196,7 @@ public class Player {
 
     public int[] playerGo() {
         int[] coord = new int[2];
+        System.out.println(getName() + " to go!");
         boards[1].printBoard();
 
         coord[0] = getValue("column");

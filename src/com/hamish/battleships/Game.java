@@ -91,6 +91,9 @@ public class Game {
                             System.out.println("Congratulations " + players[1].getName() + " won!");
                         }
                     }
+                    System.out.println("Enter any key to continue");
+                    systemIn.nextLine();
+                    systemIn.nextLine();
                     clearBoard();
                 }
             }
